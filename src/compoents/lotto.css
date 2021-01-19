@@ -1,0 +1,17 @@
+.lottoBox {
+	width: 60%;
+	height: 100px;
+	display: flex;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.ball {
+	width: 80px;
+	height: 80px;
+	margin-bottom: 10px;
+	line-height: 80px;
+	font-size: 48px;
+	border-radius: 50%;
+	text-align: center;
+}
