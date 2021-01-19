@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Button () {
+function Button ({handleLotto}) {
 	return (
 		<div style={{textAlign:"center"}}>
-			<button className="ui button">추첨</button>
+			<button className="ui button" onClick={handleLotto}>추첨</button>
 		</div>
 	)
 }

@@ -1,11 +1,14 @@
-import React from 'react';
-import LottoArray from './LottoArray'
+import React from "react";
+import LottoArray from "./LottoArray";
+import { LottoProvider } from "../context/LottoContext";
 
 function App() {
   return (
-    <div className="App">
-      <LottoArray/>
-    </div>
+    <LottoProvider>
+      <div className="App">
+        <LottoArray />
+      </div>
+    </LottoProvider>
   );
 }
 
