@@ -3,41 +3,6 @@ import Item from "./LottoItem";
 import Button from "./Button";
 import { useStateLotto, useDispatchLotto } from "../context/LottoContext";
 import "./lotto.css";
-/* 
-const lotArr = [
-  {
-		index: 1,
-    num: "?",
-  },
-  {
-		index: 2,
-    num: "?",
-  },
-  {
-		index: 3,
-    num: "?",
-  },
-  {
-		index: 4,
-    num: "?",
-  },
-  {
-		index: 5,
-    num: "?",
-  },
-  {
-		index: 6,
-    num: "?",
-	},
-	{
-		index: 7,
-    num: "+",
-  },
-  {
-		index: 8,
-    num: "?",
-  },
-]; */
 
 function LottoArray() {
   const state = useStateLotto();
@@ -50,15 +15,15 @@ function LottoArray() {
     });
     console.log(
       "handleLtto in num = ",
-      state.map((item) => item.num)
+      state.LottoBox.map((item) => item.num)
     );
   };
 
   return (
     <div>
       <div className="lottoBox">
-        {state.map((box) => (
-          <Item number={box.num} />
+        {state.LottoBox.map((box) => (
+          <Item key={box.index} number={box.num} />
         ))}
       </div>
       <div>

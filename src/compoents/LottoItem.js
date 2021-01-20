@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-function LottoItem ({number}) {
-	return (
-		<div className="ball">
-			{number}
-		</div>
-	)
+function LottoItem({ number, index }) {
+  return (
+    <div className="ball" key={index}>
+      {number}
+    </div>
+  );
 }
 
 export default LottoItem;
