@@ -1,3 +1,4 @@
+import { findAllByDisplayValue } from "@testing-library/react";
 import React, { createContext, useContext, useReducer } from "react";
 
 const initialState = {
@@ -37,14 +38,46 @@ const initialState = {
   ],
 };
 
+function ranNum() {
+  const arr = [];
+  const beforesort = [];
+  let i = 0;
+  while(i < 8){
+    let num = Math.floor(Math.random() * 45 + 1);
+    if(!check(num)){
+      arr.push(num);
+      i++;
+    }
+  }
+  function check(Num){
+    for(let x=0; x<arr.length; x++){
+      if(arr[x] === Num){
+        return true;
+      }
+    }
+    return false;
+  }
+  for(let z=0; z<arr.length-2; z++){
+    beforesort[z] = arr[z];
+  }
+  beforesort.sort(function(a,b){
+    return a-b;
+  })
+  for(let z=0; z<arr.length-2; z++){
+    arr[z] = beforesort[z]
+  }
+  return arr;
+}
+
 export function reducer(state, action) {
   switch (action.type) {
     case "DROW":
+      const ManufactureArr = ranNum();
       return {
         ...state,
         num: state.LottoBox.map((box) => {
           box.index !== 7
-            ? (box.num = Math.floor(Math.random() * 45))
+            ? (box.num = ManufactureArr[box.index-1])
             : (box.num = "+");
         }),
       };
